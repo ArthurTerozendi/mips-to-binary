@@ -48,6 +48,7 @@ public class Main {
             formI.separador();
         } else {
             FormatoJ formJ = new FormatoJ(funcao, registradores);
+            formJ.imprimir();
         }
     }
 }
