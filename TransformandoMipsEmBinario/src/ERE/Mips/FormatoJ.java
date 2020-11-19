@@ -5,4 +5,8 @@ public class FormatoJ extends Converter {
     public FormatoJ(String funcao, String registradores) {
         super(funcao, registradores);
     }
+
+    public void imprimir () {
+        System.out.println(funcao + " " + registradores);
+    }
 }
