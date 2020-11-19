@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         Scanner in = new Scanner(System.in);
-
         String registradores = "";
         String linha = in.nextLine();
         String comando[] = linha.split(" ");
@@ -49,5 +48,6 @@ public class Main {
         } else {
             FormatoJ formJ = new FormatoJ(funcao, registradores);
         }
+
     }
 }
