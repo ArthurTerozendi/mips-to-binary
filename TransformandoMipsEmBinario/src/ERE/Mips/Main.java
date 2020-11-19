@@ -9,12 +9,18 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
         String registradores = "";
+        //Recebe a linha completa do comando
         String linha = in.nextLine();
+
+        //Separa a linha recebida em um array
         String comando[] = linha.split(" ");
+        //Pega a primera posição desse novo array, que é a função mips que queremos
         String funcao = comando[0];
+        //Junta o restante em outra variável, esse são os nosso possíveis registradores
         for (int i = 1; i < comando.length; i++) {
             registradores += comando[i];
         }
+        //verifica se a função é do tipo R
         if(funcao.equals("add") || funcao.equals("addu")
                 || funcao.equals("sub") || funcao.equals("subu")
                 || funcao.equals("and") || funcao.equals("or")
@@ -30,7 +36,9 @@ public class Main {
                 || funcao.equals("jr") || funcao.equals("jarl")) {
             FormatoR formR = new FormatoR(funcao, registradores);
             formR.separador();
-        } else if (funcao.equals("addi") || funcao.equals("ori")
+        }
+        //verifica se a função é do tipo I
+        else if (funcao.equals("addi") || funcao.equals("ori")
                 || funcao.equals("xori") || funcao.equals("lui")
                 || funcao.equals("bltz") || funcao.equals("bgez")
                 || funcao.equals("bltzal") || funcao.equals("beq")
@@ -46,9 +54,13 @@ public class Main {
                 || funcao.equals("andi")) {
             FormatoI formI = new FormatoI(funcao, registradores);
             formI.separador();
-        } else {
+        }
+        //verifica se a função é do tipo J
+        else if (funcao.equals("j") || funcao.equals("jal")) {
             FormatoJ formJ = new FormatoJ(funcao, registradores);
             formJ.imprimir();
+        } else {
+            System.out.println("ERROR - Função desconhecida!");
         }
     }
 }
