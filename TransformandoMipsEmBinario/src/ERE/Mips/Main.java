@@ -1,10 +1,11 @@
 package ERE.Mips;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 	// write your code here
         Scanner in = new Scanner(System.in);
         String registradores = "";
@@ -34,7 +35,8 @@ public class Main {
                 || funcao.equals("div") || funcao.equals("divu")
                 || funcao.equals("jr") || funcao.equals("jarl")) {
             FormatoR formR = new FormatoR(funcao, registradores);
-            formR.separador();
+
+            System.out.println(formR.separador());
         }
         //verifica se a função é do tipo I
         else if (funcao.equals("addi") || funcao.equals("ori")
@@ -52,7 +54,7 @@ public class Main {
                 || funcao.equals("slti") || funcao.equals("sltiu")
                 || funcao.equals("andi")) {
             FormatoI formI = new FormatoI(funcao, registradores);
-            formI.separador();
+            System.out.println(formI.separador());
         }
         //verifica se a função é do tipo J
         else if (funcao.equals("j") || funcao.equals("jal")) {

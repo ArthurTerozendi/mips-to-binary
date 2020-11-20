@@ -19,8 +19,9 @@ public class MapaComandos{
         HashMap comandos = new HashMap(73);
 
         String linha = "";
-        while(ler.ready()){
+        while(bLer.ready()){
             linha = bLer.readLine();
+            //System.out.println(linha);
             String[] splitLinha = linha.split(";");
             comandos.put(splitLinha[0], splitLinha[1]);
         }
