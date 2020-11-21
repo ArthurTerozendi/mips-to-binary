@@ -12,6 +12,11 @@ public class MapaComandos{
         this.path = new File("comandos.txt");
     }
 
+    /**
+     * Método responsável por preencher o HashMap com os possíveis comando e registradores do mips
+     * @return
+     * @throws IOException
+     */
     public HashMap carregarHashMap() throws IOException {
         FileReader ler = new FileReader(path);
         BufferedReader bLer = new BufferedReader(ler);
@@ -19,8 +24,11 @@ public class MapaComandos{
         HashMap comandos = new HashMap(73);
 
         String linha = "";
+        //Vai ler linha por linha, até q não tenha mais nenhuma
         while(bLer.ready()){
+
             linha = bLer.readLine();
+            //Separará a linha, tendo agora uma chave (splitLinha[0]) e o valor (splitLinha[1]) para essa chave
             String[] splitLinha = linha.split(";");
             comandos.put(splitLinha[0], splitLinha[1]);
         }
