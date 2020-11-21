@@ -21,7 +21,7 @@ public class FormatoR extends Converter {
     /**
      * Método que irá separar os registradores para rd, rs e o rt
      */
-    public String separador() {
+    public String converter() {
         String registrador[] = registradores.split(",");
         if (funcao.equals("mfhi") || funcao.equals("mflo")) {
             //essas funçôes só tem o rd

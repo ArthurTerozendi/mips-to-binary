@@ -8,7 +8,7 @@ public class FormatoJ extends Converter {
         super(funcao, registradores);
     }
 
-    public void imprimir () {
+    public String converter() {
         System.out.println(funcao + " " + registradores);
         int immediate = Integer.parseInt(registradores);
         immediate /= 4;
@@ -19,8 +19,7 @@ public class FormatoJ extends Converter {
         } else {
             immediateBin = toBinario(immediate, false);
         }
-
-        System.out.println(comandos.get("j") + " " + immediateBin);
+        return comandos.get(funcao) + immediateBin;
     }
 
     private String toBinario (int decimal, boolean negativo) {
