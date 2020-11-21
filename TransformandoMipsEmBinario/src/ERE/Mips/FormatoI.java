@@ -15,7 +15,6 @@ public class FormatoI extends Converter {
 
     public String converter() {
         String registrador[] = registradores.split(",");
-        rt = registrador[0];
 
         if(funcao.equals("lb") || funcao.equals("lh")
             || funcao.equals("lw")  || funcao.equals("lbu")
@@ -24,6 +23,7 @@ public class FormatoI extends Converter {
             || funcao.equals("swl") || funcao.equals("sw")
             || funcao.equals("swr") || funcao.equals("lwl")
         ){
+            rt = registrador[0];
             rs = "";
             String aux[] = registrador[1].split(Pattern.quote("("));
             String aux2[] = aux[1].split("");
@@ -32,7 +32,28 @@ public class FormatoI extends Converter {
                 rs += aux2[i];
             }
             immediate = aux[0];
+        } else if (funcao.equals("bltz")) {
+
+            rt = "00000";
+            rs = registrador[0];
+            immediate = registrador[1];
+        } else if (funcao.equals("bgez")) {
+
+            rt = "00001";
+            rs = registrador[0];
+            immediate = registrador[1];
+        } else if (funcao.equals("bltzal")) {
+
+            rt = "10000";
+            rs = registrador[0];
+            immediate = registrador[1];
+        } else if (funcao.equals("bgezal")) {
+
+            rt = "10001";
+            rs = registrador[0];
+            immediate = registrador[1];
         } else {
+            rt = registrador[0];
             rs = registrador[1];
             immediate = registrador[2];
         }
