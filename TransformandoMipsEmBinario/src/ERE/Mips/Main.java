@@ -61,11 +61,13 @@ public class Main {
                     || funcao.equals("slti") || funcao.equals("sltiu")
                     || funcao.equals("andi")) {
                 FormatoI formI = new FormatoI(funcao, registradores);
+
                 System.out.println(entrada + " - " + formI.converter());
             }
             //verifica se a função é do tipo J
             else if (funcao.equals("j") || funcao.equals("jal")) {
                 FormatoJ formJ = new FormatoJ(funcao, registradores);
+
                 System.out.println(entrada + " - " + formJ.converter());
             } else {
                 System.out.println("ERROR - Função desconhecida!");

@@ -8,6 +8,12 @@ public class Converter {
     protected String registradores;
     protected HashMap comandos;
 
+    /**
+     * Construtor da classe mãe
+     * @param funcao
+     * @param registradores
+     * @throws IOException
+     */
     public Converter(String funcao, String registradores) throws IOException {
         this.funcao = funcao;
         this.registradores = registradores;
