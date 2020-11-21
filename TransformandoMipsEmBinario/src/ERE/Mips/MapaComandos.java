@@ -21,7 +21,6 @@ public class MapaComandos{
         String linha = "";
         while(bLer.ready()){
             linha = bLer.readLine();
-            //System.out.println(linha);
             String[] splitLinha = linha.split(";");
             comandos.put(splitLinha[0], splitLinha[1]);
         }
