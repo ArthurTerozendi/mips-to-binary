@@ -10,8 +10,10 @@ public class Main {
 	// write your code here
 
         Leitura leitura = new Leitura();
+        Escrita escrita =  new Escrita("saidaComandos.txt");
 
         ArrayList<String> entradas = leitura.getEntradas();
+        ArrayList<String> saidaBinario = new ArrayList<>();
 
         for (String entrada: entradas) {
             String registradores = "";
@@ -44,6 +46,7 @@ public class Main {
                 FormatoR formR = new FormatoR(funcao, registradores);
 
                 System.out.println(entrada + " - " + formR.converter());
+                saidaBinario.add(formR.converter());
             }
             //verifica se a função é do tipo I
             else if (funcao.equals("addi") || funcao.equals("ori")
@@ -63,18 +66,18 @@ public class Main {
                 FormatoI formI = new FormatoI(funcao, registradores);
 
                 System.out.println(entrada + " - " + formI.converter());
+                saidaBinario.add(formI.converter());
             }
             //verifica se a função é do tipo J
             else if (funcao.equals("j") || funcao.equals("jal")) {
                 FormatoJ formJ = new FormatoJ(funcao, registradores);
 
                 System.out.println(entrada + " - " + formJ.converter());
+                saidaBinario.add(formJ.converter());
             } else {
                 System.out.println("ERROR - Função desconhecida!");
             }
         }
-
-
-
+        escrita.escrever(saidaBinario);
     }
 }
