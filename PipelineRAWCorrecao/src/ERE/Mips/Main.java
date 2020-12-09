@@ -2,6 +2,7 @@ package ERE.Mips;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
 
@@ -10,6 +11,8 @@ public class Main {
 	    Leitura leitura = new Leitura("instrucoes.txt");
         ArrayList<String> instrucoes = leitura.lerArquivo();
         SepararInstrucao separarInstrucao = new SepararInstrucao();
+
+        HashMap<String, ArrayList<String>> instrucoesRegistradores = new HashMap<>();
 
         for (String instrucao : instrucoes) {
             String inst[] = instrucao.split(" ");
@@ -34,6 +37,9 @@ public class Main {
                     || funcao.equals("div") || funcao.equals("divu")
                     || funcao.equals("jr") || funcao.equals("jarl")) {
                 System.out.println(separarInstrucao.separarTipoR(registradores, funcao));
+                System.out.println(instrucao);
+
+                instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoR(registradores, funcao));
             }
 
             //verifica se a função é do tipo I
@@ -52,16 +58,24 @@ public class Main {
                     || funcao.equals("slti") || funcao.equals("sltiu")
                     || funcao.equals("andi")) {
                 System.out.println(separarInstrucao.separarTipoI(registradores, funcao));
+                System.out.println(instrucao);
+
+                instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoR(registradores, funcao));
             }
 
             //verifica se a função é do tipo J
             else if (funcao.equals("j") || funcao.equals("jal")) {
                 System.out.println(separarInstrucao.separarTipoJ(registradores, funcao));
+
+                instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoR(registradores, funcao));
             } else {
                 System.out.println("ERROR - Função desconhecida!");
+                System.out.println(instrucao);
             }
         }
 
+        Bolha bolha = new Bolha();
 
+        bolha.aplicandoBolha(instrucoesRegistradores, instrucoes);
     }
 }
