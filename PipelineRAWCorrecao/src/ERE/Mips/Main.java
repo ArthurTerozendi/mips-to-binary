@@ -75,7 +75,10 @@ public class Main {
         }
 
         Bolha bolha = new Bolha();
+        Reordenamento reordenamento = new Reordenamento();
 
-        bolha.aplicandoBolha(instrucoesRegistradores, instrucoes);
+        //bolha.aplicandoBolha(instrucoesRegistradores, instrucoes);
+        System.out.println("\nReordenamento\n");
+        reordenamento.aplicandoReordenamento(instrucoesRegistradores, instrucoes);
     }
 }
