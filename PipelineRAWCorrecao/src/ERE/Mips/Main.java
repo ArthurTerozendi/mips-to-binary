@@ -36,8 +36,8 @@ public class Main {
                     || funcao.equals("mult") || funcao.equals("multu")
                     || funcao.equals("div") || funcao.equals("divu")
                     || funcao.equals("jr") || funcao.equals("jarl")) {
-                System.out.println(separarInstrucao.separarTipoR(registradores, funcao));
-                System.out.println(instrucao);
+                //System.out.println(separarInstrucao.separarTipoR(registradores, funcao));
+                //System.out.println(instrucao);
 
                 instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoR(registradores, funcao));
             }
@@ -57,15 +57,15 @@ public class Main {
                     || funcao.equals("swr") || funcao.equals("addiu")
                     || funcao.equals("slti") || funcao.equals("sltiu")
                     || funcao.equals("andi")) {
-                System.out.println(separarInstrucao.separarTipoI(registradores, funcao));
-                System.out.println(instrucao);
+                //System.out.println(separarInstrucao.separarTipoI(registradores, funcao));
+                //System.out.println(instrucao);
 
                 instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoR(registradores, funcao));
             }
 
             //verifica se a função é do tipo J
             else if (funcao.equals("j") || funcao.equals("jal")) {
-                System.out.println(separarInstrucao.separarTipoJ(registradores, funcao));
+                //System.out.println(separarInstrucao.separarTipoJ(registradores, funcao));
 
                 instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoR(registradores, funcao));
             } else {
