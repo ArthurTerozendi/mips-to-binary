@@ -10,23 +10,12 @@ public class Main {
         Leitura leitura =  new Leitura("entrada.txt");
         ArrayList<String> entrada = leitura.lerArquivo();
 
+        //Pega o valor que define qual é o tipo de mapeamento
         String tipoMapeamento = entrada.get(0);
         entrada.remove(0);
 
         Mapeamento mapeamento = new Mapeamento(entrada);
 
-        switch (tipoMapeamento){
-            case "1":
-                mapeamento.fazerMapeamentoDireto();
-                break;
-            case "2":
-                mapeamento.fazerMapeamentoComplentamenteAssociativo();
-                break;
-            case "3":
-                mapeamento.fazerMapeamentoAssociativoConjunto();
-                break;
-            default:
-                System.out.println("ERROR!!! Tipo de mapeamento desconhecido");
-        }
+        mapeamento.fazerMapeamento(tipoMapeamento);
     }
 }

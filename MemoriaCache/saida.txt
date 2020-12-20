@@ -1,0 +1,15 @@
+Tamanho da memória: 32 KB
+Número de bits do endereço: 31
+Número de bits para posição no bloco: 6
+Número de bits para o número do conjunto: 5
+Número de bits para a TAG: 20
+3		20		8
+0		16		0
+1		12		44
+7		2		58
+4		4		52
+7		31		60
+5		12		16
+657		5		24
+461		23		22
+56		18		60
