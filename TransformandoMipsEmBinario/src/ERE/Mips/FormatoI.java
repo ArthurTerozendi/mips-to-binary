@@ -100,7 +100,7 @@ public class FormatoI extends Converter {
             binario = preencherBinario(binario, false);
         }
 
-        comandoBinario = comandos.get(funcao).toString() + comandos.get(rs) + comandos.get(rt) + binario;
+        comandoBinario = comandos.get(funcao).toString() + " " + comandos.get(rs)+ " " + comandos.get(rt) + " " + binario;
 
         return comandoBinario;
     }

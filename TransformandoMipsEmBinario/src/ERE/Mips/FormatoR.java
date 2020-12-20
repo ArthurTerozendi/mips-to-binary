@@ -103,11 +103,11 @@ public class FormatoR extends Converter {
                     + comandos.get(shamt)
                     + comandos.get(funcao);
         } else {
-            comandoBinario = "000000"
-                    + comandos.get(rs)
-                    + comandos.get(rt)
-                    + comandos.get(rd)
-                    + shamt
+            comandoBinario = "000000" + " "
+                    + comandos.get(rs) + " "
+                    + comandos.get(rt) + " "
+                    + comandos.get(rd) + " "
+                    + shamt + " "
                     + comandos.get(funcao);
         }
 

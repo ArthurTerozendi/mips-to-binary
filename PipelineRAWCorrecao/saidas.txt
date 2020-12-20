@@ -1,0 +1,16 @@
+----- Bolha -----
+lw   $s6, 100($s7)
+sub  $s7, $s6, $s0
+NOP
+NOP
+addi $s7, $s7, 1
+NOP
+NOP
+sw   $s6, 100($s7)
+add  $s5, $s3, $s7
+----- Reordenamento -----
+lw   $s6, 100($s7)
+sub  $s7, $s6, $s0
+addi $s7, $s7, 1
+add  $s5, $s3, $s7
+sw   $s6, 100($s7)

@@ -13,6 +13,11 @@ public class Leitura {
         this.path = new File(path);
     }
 
+    /**
+     * Vai ler um arquivo com as intruções e salvar linha por linha em uma ArrayList
+     * @return
+     * @throws IOException
+     */
     public ArrayList<String> lerArquivo () throws IOException {
 
         ArrayList<String> instrucoes = new ArrayList<>();

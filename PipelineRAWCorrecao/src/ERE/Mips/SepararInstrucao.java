@@ -9,7 +9,7 @@ public class SepararInstrucao {
     }
 
     /**
-     *
+     * Vai separar uma linha de instrução do tipo R
      * @param registradores
      * @param funcao
      * @return
@@ -28,7 +28,7 @@ public class SepararInstrucao {
     }
 
     /**
-     *
+     * Vai separar uma linha de instrução do tipo I
      * @param registradores
      * @param funcao
      * @return
@@ -56,7 +56,7 @@ public class SepararInstrucao {
             //Separa o parte com o segundo parenteses caracter por caracter
             String aux2[] = aux[1].split("");
 
-            //aux[1] = "";
+            aux[1] = "";
             //Vai juntar todos os caracteres em um string, exceto o ultimo, que é o que contém os parenteses
             for (int i = 0; i < aux2.length - 1; i++) {
                 rs += aux2[i];
@@ -72,7 +72,7 @@ public class SepararInstrucao {
     }
 
     /**
-     *
+     * Vai separar uma linha de instrução do tipo J
      * @param registradores
      * @param funcao
      * @return

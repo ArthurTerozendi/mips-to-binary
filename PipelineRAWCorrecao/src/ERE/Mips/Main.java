@@ -60,14 +60,14 @@ public class Main {
                 //System.out.println(separarInstrucao.separarTipoI(registradores, funcao));
                 //System.out.println(instrucao);
 
-                instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoR(registradores, funcao));
+                instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoI(registradores, funcao));
             }
 
             //verifica se a função é do tipo J
             else if (funcao.equals("j") || funcao.equals("jal")) {
                 //System.out.println(separarInstrucao.separarTipoJ(registradores, funcao));
 
-                instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoR(registradores, funcao));
+                instrucoesRegistradores.put(instrucao, separarInstrucao.separarTipoJ(registradores, funcao));
             } else {
                 System.out.println("ERROR - Função desconhecida!");
                 System.out.println(instrucao);
@@ -76,9 +76,9 @@ public class Main {
 
         Bolha bolha = new Bolha();
         Reordenamento reordenamento = new Reordenamento();
+        Escrita escrita = new Escrita("saidas.txt");
 
-        //bolha.aplicandoBolha(instrucoesRegistradores, instrucoes);
-        System.out.println("\nReordenamento\n");
-        reordenamento.aplicandoReordenamento(instrucoesRegistradores, instrucoes);
+        escrita.escreverArquivo(bolha.aplicandoBolha(instrucoesRegistradores, instrucoes),
+                reordenamento.aplicandoReordenamento(instrucoesRegistradores, instrucoes));
     }
 }

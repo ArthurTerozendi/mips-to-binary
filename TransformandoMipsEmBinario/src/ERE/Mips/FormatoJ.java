@@ -29,7 +29,7 @@ public class FormatoJ extends Converter {
         } else {
             immediateBin = toBinario(immediate, false);
         }
-        return comandos.get(funcao) + immediateBin;
+        return comandos.get(funcao) + " " + immediateBin;
     }
 
     /**
