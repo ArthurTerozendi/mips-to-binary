@@ -1,2 +1,2 @@
-# trabalho-AC
- Trabalho de Arquitetura de Computadores - Transformando Mips em Binário
+# Mips to Binary
+ Transformando Mips em Binário
